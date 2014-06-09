@@ -1,0 +1,42 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.row:nth-child(odd) {
+  background-color: #cccccc;
+}
+
+.row:nth-child(even){
+  background-color: #EDEDED;
+}
+
+.container {
+  width: 544px;
+  display: flex;
+  flex-direction: column;
+}
+
+.element {
+  padding: 30px 19px;
+  font-size: 1.4em;
+  /*flex: 1;*/
+  align-self: auto;
+  margin: auto;
+}
+
+.heading {
+  align-self: center;
+  color: #357EC7;
+  font-weight: initial;
+  font-size: 3em;
+}
