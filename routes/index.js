@@ -19,15 +19,11 @@ router.get('/paypal/currencyConversion', function(req, res){
   var amount = +req.query.amount;
   var from = req.query.from;
   var to = req.query.to;
-  console.log('amount ', amount);
-  console.log('type of amount ', typeof amount);
   convertAmount(amount, from, to)
   .then(function(result){
-    // console.log('the result ', result);
     currency.getCurrencyProfile(to)
     .then(function(profile){
-      console.log('the result ', result);
-      console.log('the profile ', profile);
+
       res.send(200, {"amount": result, "currencyCode": profile.code, "currencySymbol": profile.symbol_native});
     });
   })
@@ -41,7 +37,6 @@ router.get('/paypal/conversionRate', function(req, res){
   var to = req.query.to;
   conversionRate(from, to)
   .then(function(result){
-    console.log('conversion rate ', result);
     res.send(200, {"conversionRate": result});
   })
   .catch(function(err){
